@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import FixedContact from "../components/FixedContact";
 import { MessageCircle } from "lucide-react";
 import CountdownTimer from "../components/CountdownTimer";
-import Product from "../components/product";
+import Product from "./../components/Product";
 
 export default function Home({ products, user, cart, addToCart, minToCart }) {
   return (
