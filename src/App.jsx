@@ -18,7 +18,7 @@ const client = new Client()
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   const [products, setProducts] = useState([]);
   const tablesDB = new TablesDB(client);
   const account = new Account(client);
@@ -78,6 +78,9 @@ function App() {
       });
     } catch (error) {
       console.log(error);
+    } finally {
+      setUser(null);
+      setCart([]);
     }
   };
 
