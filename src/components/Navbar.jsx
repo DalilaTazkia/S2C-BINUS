@@ -46,38 +46,38 @@ export default function Navbar({ user, cart, addToCart, minToCart }) {
       </div>
 
       <div className="w-auto md:w-1/4 flex gap-2 md:gap-4 justify-end items-center">
-        <button
-          onClick={() => setOpenCart(true)}
-          className={`${
-            user != null ? "" : "hidden"
-          } md:block px-2 py-2 text-black/40 hover:text-black rounded-full poppins-semibold cursor-pointer`}
-        >
-          <ShoppingCart />
-        </button>
-        <Link
-          to={"/account"}
-          className={`${
-            user != null ? "" : "hidden"
-          } md:block px-2 py-2 text-black/40 hover:text-black rounded-full poppins-semibold`}
-        >
-          Account
-        </Link>
-        <Link
-          to={"/login"}
-          className={`${
-            user ? "hidden" : " md:block"
-          } px-6 py-2 text-black/40 hover:text-black rounded-full poppins-semibold`}
-        >
-          Login
-        </Link>
-        <Link
-          to={"/register"}
-          className={`${
-            user ? "hidden" : ""
-          } px-6 py-2 bg-amber-300 rounded-full poppins-semibold hover:scale-105 transition`}
-        >
-          Get Started
-        </Link>
+        {!user ? (
+          <>
+            <Link
+              to={"/login"}
+              className={`px-6 py-2 text-black/40 hover:text-black rounded-full poppins-semibold`}
+            >
+              Login
+            </Link>
+            <Link
+              to={"/register"}
+              className={`px-6 py-2 bg-amber-300 rounded-full poppins-semibold hover:scale-105 transition`}
+            >
+              Get Started
+            </Link>
+          </>
+        ) : (
+          <>
+            <button
+              onClick={() => setOpenCart(true)}
+              className={`md:block px-2 py-2 text-black/40 hover:text-black rounded-full poppins-semibold cursor-pointer`}
+            >
+              <ShoppingCart />
+            </button>
+            <Link
+              to={"/account"}
+              className={`md:block px-2 py-2 text-black/40 hover:text-black rounded-full poppins-semibold`}
+            >
+              Account
+            </Link>
+          </>
+        )}
+
         <button
           onClick={() => setIsNavBarOpen((prev) => !prev)}
           className="block md:hidden px-2 py-2 rounded-xl text-black/40 hover:text-black cursor-pointer"
