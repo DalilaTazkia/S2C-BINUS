@@ -46,7 +46,22 @@ export default function Navbar({ user, cart, addToCart, minToCart }) {
       </div>
 
       <div className="w-auto md:w-1/4 flex gap-2 md:gap-4 justify-end items-center">
-        {!user || user == null || user == {} || user == undefined ? (
+        {user || user != null || user != {} || user != undefined ? (
+           <>
+            <button
+              onClick={() => setOpenCart(true)}
+              className={`md:block px-2 py-2 text-black/40 hover:text-black rounded-full poppins-semibold cursor-pointer`}
+            >
+              <ShoppingCart />
+            </button>
+            <Link
+              to={"/account"}
+              className={`md:block px-2 py-2 text-black/40 hover:text-black rounded-full poppins-semibold`}
+            >
+              Account
+            </Link>
+          </>
+        ) : (
           <>
             <Link
               to={"/login"}
@@ -61,21 +76,7 @@ export default function Navbar({ user, cart, addToCart, minToCart }) {
               Get Started
             </Link>
           </>
-        ) : (
-          <>
-            <button
-              onClick={() => setOpenCart(true)}
-              className={`md:block px-2 py-2 text-black/40 hover:text-black rounded-full poppins-semibold cursor-pointer`}
-            >
-              <ShoppingCart />
-            </button>
-            <Link
-              to={"/account"}
-              className={`md:block px-2 py-2 text-black/40 hover:text-black rounded-full poppins-semibold`}
-            >
-              Account
-            </Link>
-          </>
+         
         )}
 
         <button
