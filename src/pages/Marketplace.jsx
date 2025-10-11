@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CountdownTimer from "../components/CountdownTimer";
-import Product from "../components/product";
+import Product from "./../components/Product";
 import FixedContact from "../components/FixedContact";
 
 export default function Marketplace({
