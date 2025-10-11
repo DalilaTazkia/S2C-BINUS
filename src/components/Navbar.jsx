@@ -46,7 +46,7 @@ export default function Navbar({ user, cart, addToCart, minToCart }) {
       </div>
 
       <div className="w-auto md:w-1/4 flex gap-2 md:gap-4 justify-end items-center">
-        {!user? (
+        {!user && user !== null && user !== undefined && user !== {} ?(
            <>
             <button
               onClick={() => setOpenCart(true)}
