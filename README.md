@@ -106,9 +106,9 @@ Create a `.env` file in the project root or rename file .env.example to .env and
 ## 🚀 Our Team
 
 Our Team:
+- Dalila Tazkia
 - Asri Sabilla Putri
 - Jihan Aqilah
-- Dalila Tazkia
 
 ---
 
